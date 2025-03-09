@@ -8,3 +8,5 @@ phpstan:
 	docker compose exec php vendor/bin/phpcs
 phplint:
 	docker compose exec php vendor/bin/phplint
+phpunit:
+	docker compose exec php vendor/bin/phpunit
