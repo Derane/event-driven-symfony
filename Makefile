@@ -5,7 +5,7 @@ build:
 down:
 	docker compose down
 phpstan:
-	docker compose exec php vendor/bin/phpcs
+	docker compose exec php vendor/bin/phpstan
 phplint:
 	docker compose exec php vendor/bin/phplint
 phpunit:
