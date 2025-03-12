@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Webhook;
+namespace App\Webhook\Handler;
 
 use App\DTO\Webhook;
 

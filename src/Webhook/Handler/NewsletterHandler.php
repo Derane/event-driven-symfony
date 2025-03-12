@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Webhook;
+namespace App\Webhook\Handler;
 
 use App\DTO\Webhook;
 
@@ -20,6 +20,4 @@ class NewsletterHandler implements WebhookHandlerInterface
     {
         // TODO: Implement handle() method.
     }
-
-
 }
