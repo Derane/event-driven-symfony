@@ -8,7 +8,7 @@ use Symfony\Contracts\HttpClient\HttpClientInterface;
 
 class CdpClient
 {
-    private const string CDP_API_URL = 'https://api.cdp.com/';
+    const CDP_API_URL = 'https://api.example.com';
 
     public function __construct(
         private HttpClientInterface                 $httpClient,
