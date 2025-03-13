@@ -1,12 +1,14 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\DTO;
 
 class Webhook
 {
     private string $event;
 
-    private string $url;
+    private string $rawPayload;
 
     public function getEvent(): string
     {
@@ -18,15 +20,13 @@ class Webhook
         $this->event = $event;
     }
 
-    public function getUrl(): string
+    public function getRawPayload(): string
     {
-        return $this->url;
+        return $this->rawPayload;
     }
 
-    public function setUrl(string $url): void
+    public function setRawPayload(string $rawPayload): void
     {
-        $this->url = $url;
+        $this->rawPayload = $rawPayload;
     }
-
-
 }

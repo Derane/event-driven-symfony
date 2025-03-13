@@ -2,6 +2,8 @@
 
 namespace App\Webhook\Handler;
 
+use App\DTO\Newsletter\Factory\NewsletterWebhookFactory;
+use App\DTO\Newsletter\Newsletter;
 use App\DTO\Webhook;
 
 class NewsletterHandler implements WebhookHandlerInterface
@@ -11,6 +13,13 @@ class NewsletterHandler implements WebhookHandlerInterface
         'newsletter_subscribed',
         'newsletter_unsubscribed',
     ];
+
+    public function __construct(
+        private NewsletterWebhookFactory $factory,
+    )
+    {
+    }
+
     public function supports(Webhook $webhook): bool
     {
         return in_array($webhook->getEvent(), self::SUPPORTED_TYPES);
@@ -18,6 +27,7 @@ class NewsletterHandler implements WebhookHandlerInterface
 
     public function handle(Webhook $webhook): void
     {
-        // TODO: Implement handle() method.
+        $webhook = $this->factory->create($webhook);
+        dd($webhook);
     }
 }

@@ -29,7 +29,7 @@ class WebhooksController extends AbstractController
                 Webhook::class,
                 'json'
             );
-            $webhook->setUrl($request->getContent());
+            $webhook->setRawPayload($request->getContent());
             $this->handlerDelegator->delegate($webhook);
         } catch (\Throwable $exception) {
             throw $exception;
